@@ -34,14 +34,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+/*The problem in the method run1000- that is called to func that return promises
+and when pushed to the promises array will be push in it promises that not returned yet.
+so, I change the code for solves this problem.
+Before push to array by calling to the func...
+I add an await, that will be promise that all promises will be returned.
+*/
 function getNumberFromServer() {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, 1];
+                case 0: return [4 /*yield*/, 3];
                 case 1: 
-                //some api call to return a number from a remote server
-                //i add this row to show number
+                // some api call to return a number from a remote server
                 return [2 /*return*/, _a.sent()];
             }
         });
@@ -49,41 +54,38 @@ function getNumberFromServer() {
 }
 function run1000() {
     return __awaiter(this, void 0, void 0, function () {
-        var promises, i, _i, promises_1, p, _a, promises_2, p;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
+        var promises, i, _i, promises_1, p;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
                 case 0:
                     promises = [];
                     i = 0;
-                    _b.label = 1;
+                    _a.label = 1;
                 case 1:
                     if (!(i < 1000)) return [3 /*break*/, 4];
-                    // i add the await
+                    // I add the await
                     return [4 /*yield*/, promises.push(getNumberFromServer())];
                 case 2:
-                    // i add the await
-                    _b.sent();
-                    _b.label = 3;
+                    // I add the await
+                    _a.sent();
+                    _a.label = 3;
                 case 3:
                     i++;
                     return [3 /*break*/, 1];
                 case 4:
-                    //i add this for to show
-                    for (_i = 0, promises_1 = promises; _i < promises_1.length; _i++) {
-                        p = promises_1[_i];
-                        console.log(p);
-                    }
-                    _a = 0, promises_2 = promises;
-                    _b.label = 5;
+                    _i = 0, promises_1 = promises;
+                    _a.label = 5;
                 case 5:
-                    if (!(_a < promises_2.length)) return [3 /*break*/, 8];
-                    p = promises_2[_a];
+                    if (!(_i < promises_1.length)) return [3 /*break*/, 8];
+                    p = promises_1[_i];
                     return [4 /*yield*/, p];
                 case 6:
-                    _b.sent();
-                    _b.label = 7;
+                    _a.sent();
+                    //I add this row because I want to see
+                    console.log(p);
+                    _a.label = 7;
                 case 7:
-                    _a++;
+                    _i++;
                     return [3 /*break*/, 5];
                 case 8: return [2 /*return*/];
             }

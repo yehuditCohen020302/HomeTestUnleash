@@ -17,7 +17,7 @@ body{
 
 /* A Selector that applies stylesheet for every element whose type attribute is green */
 [type~=green]{
-    background-color:chocolate;
+    background-color:green;
     margin: 2%;
 }	
 

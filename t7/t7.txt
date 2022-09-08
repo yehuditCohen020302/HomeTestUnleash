@@ -1,0 +1,20 @@
+//////////
+An endpoint to list users by multiple ids.
+
+GET /users/?id=id1,id2,...
+
+
+/////////
+An endpoint to replace a user by id.
+
+PUT /users/{id}
+
+
+/////////
+An endpoint to create multiple users.
+
+POST /users/
+    [{user}, {user},...]
+   
+    
+

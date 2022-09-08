@@ -1,0 +1,44 @@
+///////////////
+The finally result:
+
+q= ' mimeType contains '/pdf' AND '1234' in parents OR
+     mimeType contains '/mp3' AND sharedWithMe=true OR
+     name contains 'important' '
+
+//////////////
+
+
+
+
+
+
+
+My way;)
+
+||111
+pdf files that are located directly under folder with id 1234
+*** 
+   file.pdf && in- 1234 folder
+q: mimeType = 'application/vnd.google-apps.folder'
+files.list/
+'mimeType contains 'pdf/' in '1234' in parents'
+'1234' / mimeType contains 'pdf/'
+
+
+//////////
+||222
+mp3 files that are shared with the current user
+***
+   file.mp3 && in currentUser
+
+mimeType contains 'mp3/' and sharedWithMe=true
+
+
+//////////
+||333 
+The file name contains the string important
+***  
+name contains 'important'
+
+
+
