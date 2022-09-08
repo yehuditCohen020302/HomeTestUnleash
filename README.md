@@ -7,4 +7,4 @@ I really like these topics!
 And I enjoyed the challenge of looking for material, learning new things and solving the problems,
 I hope I succeeded ;)
 Thank you for the time you invest in me
-Have a nice test!
+Have a nice check it!
